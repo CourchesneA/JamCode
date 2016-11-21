@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <link href='ScheduleInterface/fullcalendar.css' rel='stylesheet' />
+<link href='ScheduleInterface/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='ScheduleInterface/lib/moment.min.js'></script>
+<script src='ScheduleInterface/lib/jquery.min.js'></script>
+<script src='ScheduleInterface/fullcalendar.min.js'></script>
+  <title>Login Form</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.btn-block { width: 100%; display:block; }
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+	margin: 40px 10px;
+		padding: 0;
+		
+		font-size: 14px;
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #092756;
+	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+}
+.login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+input { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+select { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+select:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+        background: white;
+	}
+	
+
+
+    </style>
+
+  <script src="../jsdata.js"></script>
+
+</head>
+
+<body style="overflow:scroll;">
+  <div class="login">
+	<h1>Identification</h1>
+   <!-- <form onsubmit="myFunction()">-->
+		<select name="rank" id="rank222" onchange="changeHiddenInput(this)">
+			<option value="Student">Student</option>
+			<option value="Teacher">Teacher</option>
+		</select>
+    	<!--<input type="text" name="u" placeholder="Username" required="required" />-->
+        <input type="text" name="uniqueID" placeholder="ID" id="ID222" style="display:block;" />
+		<select name="course" id="Course222"  style="display:none;"/>
+			<!--<option value="Mathematics">Mathematics</option>
+			<option value="Physics">Physics</option>
+			<option value="Biology">Biology</option>
+			<option value="Chemistry">Chemistry</option>
+			<option value="History">History</option>
+			<option value="Sociology">Sociology</option>
+			<option value="French">French</option>
+			<option value="English">English</option>
+			<option value="Programming">Physics</option>
+			<option value="Music">Music</option>-->
+
+		</select>
+        <!--<button type="submit" class="btn btn-primary btn-block btn-large">Generate Schedule</button>-->
+		<button onclick="generateSchedule()" class="btn btn-primary btn-block btn-large">Generate Schedule</button>
+    <!--</form>-->
+</div>
+  
+<script>
+
+
+	function changeHiddenInput(objDropDown){
+		var person = objDropDown.value;
+		if(person === "Teacher"){
+			document.getElementById("ID222").style.display="none";
+			document.getElementById("Course222").style.display="block";
+		}else{
+			document.getElementById("ID222").style.display="block";
+			document.getElementById("Course222").style.display="none";
+		}
+	}
+	window.onload = addCourses;
+
+	function addCourses(){
+			var classes = jsonobj.classes;
+			//add option for all classes
+			var courseSelect = document.getElementById("Course222");
+			for(var onecourse in classes){
+				var option = document.createElement("option")
+				option.text = onecourse;
+				option.value = onecourse;
+				courseSelect.appendChild(option);
+			}
+	}
+
+	function renderCal(atitle){
+		document.body.innerHTML="<div id='calendar' style='padding:5px;'></div><br><br><input type='button' value='Disconnect' onClick='window.location.reload()'>"		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listWeek'
+			},
+			defaultDate: '2016-11-20',
+			defaultView: 'agendaWeek',
+			titleFormat: atitle,
+			weekends: false,
+			navLinks: true, // can click day/week names to navigate views
+			editable: false,
+			eventLimit: true, // allow "more" link when too many events
+			events: [],
+			eventClick: function(calEvent, jsEvent, view){
+				console.log("Clicked");
+				console.log(calEvent.title);
+				console.log(calEvent.students);
+				if(calEvent.students != null && !calEvent.students != undefined){
+					var str = "Student List:\n"
+					for(var j = 0; j<calEvent.students.length; j++){
+						str+="\n"+calEvent.students[j].name + " - ID: " + calEvent.students[j].id
+					}
+					alert(str);
+				}
+			}
+		});
+		
+	}
+	function generateSchedule(){
+		var rank = document.getElementById("rank222").value;
+		//Here parse the jsonobj and create a schedule object
+		if(rank == "Teacher"){
+			var courseTeached = document.getElementById("Course222").value
+			var eventArray = []
+			var classes = jsonobj.classes;
+			var mycourse = classes[courseTeached];
+			
+			if (mycourse == null || mycourse == undefined){
+				alert("Sorry, no "+courseTeached+" course are given this semester");
+				return;
+			}
+			var j=1;
+			for(var lecture in mycourse){	//for each lecture
+				var studentsArray = []
+				var event = {};
+				var info = lecture.split("-");
+				for(var stud in  mycourse[lecture]){	//for each student
+					studentsArray.push(mycourse[lecture][stud]);
+				}
+				event.students = studentsArray;
+				event.title = "Lecture "+j + "\n*Click to see student list*";
+				event.day = info[0];
+				event.start = formatTime(info[1]);
+				event.end = formatTime(info[2]);
+				var dow = []
+				dow.push(getDayNumber(event.day));
+				event.dow = dow;
+				eventArray.push(event);
+				j++;
+			} 
+			renderCal("[Teacher - "+courseTeached+"\n]");
+		}else{	//rank == "Student"
+			var sID = document.getElementById("ID222").value;
+			var foundStudent;
+			var students = jsonobj.students;
+			for(var curStudent in students){
+					if(students[curStudent].id==sID){
+						foundStudent=students[curStudent];
+						break;
+					}
+			}
+			if(foundStudent == null || foundStudent == undefined){
+				alert("Error, ID does not match any student");
+				return -1;
+			}
+			//Found student object
+			var classesTaken = foundStudent.classesTaken;
+			var classesArray = classesTaken.split(",");
+			var eventArray = []
+			console.log(classesArray.length);
+			for(var i = 0; i<classesArray.length; i++){	//iterate through classes strings
+				var event = {};
+				var info = classesArray[i].split("-");
+				event.title = info[0];
+				event.day = info[1];
+				event.start = formatTime(info[2]);
+				event.end = formatTime(info[3])
+				var dow = [];
+				dow.push(getDayNumber(event.day));
+				event.dow = dow;
+				eventArray.push(event);
+			}
+			renderCal("["+foundStudent.name+" - ID: "+foundStudent.id+"]");			
+		}
+		//add events
+			console.log(eventArray.length);
+			for(var i=0; i<eventArray.length; i++){
+				console.log("day"+eventArray[i].dow[0]);
+				console.log("start"+eventArray[i].start);
+				//add event to calendar
+				$('#calendar').fullCalendar( 'renderEvent',eventArray[i],true);
+			}
+	}
+
+	function formatTime(time){
+		console.log(time);
+		var ntime = parseInt(time.substring(2,7));
+		var offset = 0;
+		if(time.charAt(0)=='P' && ntime<1200){
+			offset = 1200
+		}
+		ntime+= offset;
+		ntime =ntime.toString();
+		if (ntime.length == 3){
+			ntime = "0"+ntime;
+		}
+		ntime = ntime.substring(0,2)+":"+ntime.substring(2)
+		console.log(ntime);
+		return ntime;
+	}
+	function getDayNumber(day){
+		var daynb;
+		if(day==="MONDAY"){
+			daynb = 1;
+		}else if(day==="TUESDAY"){
+			daynb = 2;
+		}else if(day==="WEDNESDAY"){
+			daynb = 3;
+		}else if(day==="THURSDAY"){
+			daynb = 4;
+		}else if(day==="FRIDAY"){
+			daynb = 5;
+		}
+		console.log("got day: "+day+" which is nb: "+daynb)
+		return daynb;
+	}
+	function changeContent(which){
+		$('#'+which).load('test.html');
+	}
+</script>
+
+</body>
+</html>
