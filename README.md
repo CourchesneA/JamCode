@@ -32,4 +32,4 @@ Our code is in mainly Java. We parse the JSON files into objects to run the algo
 
 * Login as a student with your ID and see you course schedule
 * Login as a teacher with you course name and see your lectures and its registered students by clicking it
-* ~~Export calendar as iCal~~(Not enough time to implement)
+* ~~Export calendar as iCal~~ (Cancelled)
