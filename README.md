@@ -1,5 +1,5 @@
 # JamCode
-# Team Name: "Choose your team name (Required)"
+# Won 1st place for McGill Code.Jam() 2016 Junior Challenge (500$)
 *Project by*
 *Anthony Courchesne*
 *and*
